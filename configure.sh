@@ -1,5 +1,6 @@
 # Install basic utilities
-sudo apt install i3 i3lock compton rofi dunst feh zathura chromium-browser neovim zsh ranger htop vlc git
+sudo apt install i3 i3lock compton rofi dunst feh zathura chromium-browser
+neovim zsh ranger htop vlc git redshift
 
 # Install i3lock-color
 git clone https://github.com/chrjguill/i3lock-color
