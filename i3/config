@@ -192,6 +192,7 @@ client.urgent               $urgent     $urgent     $foreground $urgent
 
 # Personal bynds
 bindsym $mod+x exec ~/.config/i3/lock.sh -gf "Fira Mono" -t "..." -- scrot -z
+bindsym $mod+n exec ~/.config/i3/redshift-toggle.sh 
 
 # Programs to execute when i3 is loaded
 exec --no-startup-id compton --config ~/.config/compton/config

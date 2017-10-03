@@ -189,7 +189,6 @@ label-connected = " "
 type = custom/script
 interval = 5
 exec = ~/.config/polybar/redshift.sh
-click-left = ~/.config/polybar/redshift-toggle.sh
 
 format-prefix-foreground = ${colors.foreground}
 format-padding = 2
