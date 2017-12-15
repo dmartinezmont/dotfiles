@@ -1,9 +1,27 @@
 [colors]
-background =        #aaeeeeee
-foreground =        #252525
 
-background-alt =    #aa252525
-foreground-alt =    #eeeeee
+; Colors from .Xresources
+bg            =   ${xrdb:*background}
+fg            =   ${xrdb:*foreground}
+black         =   ${xrdb:*color0}
+red           =   ${xrdb:*color1}
+green         =   ${xrdb:*color2}
+yellow        =   ${xrdb:*color3}
+blue          =   ${xrdb:*color4}
+magenta       =   ${xrdb:*color5}
+cyan          =   ${xrdb:*color6}
+white         =   ${xrdb:*color7}
+dblack        =   ${xrdb:*color8}
+dred          =   ${xrdb:*color9}
+dgreen        =   ${xrdb:*color10}
+dyellow       =   ${xrdb:*color11}
+dblue         =   ${xrdb:*color12}
+dmagenta      =   ${xrdb:*color13}
+dcyan         =   ${xrdb:*color14}
+dwhite        =   ${xrdb:*color15}
+
+background =        #55eeeeee
+foreground =        #252525
 
 background-urg =    #e53934
 foreground-urg =    #e53934
@@ -11,57 +29,48 @@ foreground-urg =    #e53934
 [bar/bar1]
 monitor = "LVDS-1"
 
-font-0 = FiraMono:style=Bold:size=9;1
-font-1 = FontAwesome:fontformat=truetype:size=9;1
+font-0 = Hack:style=Bold:size=9;2
+font-1 = FontAwesome:fontformat=truetype:size=9;2
 
 width = 100%
-height = 23
+height = 20
 
 background = ${colors.background}
 foreground = ${colors.foreground}
+;border-top-size = 7
+;border-top-color = ${colors.background}
+;border-bottom-size = 7
+;border-bottom-color = ${colors.background}
 
 modules-left = i3
-modules-center = date
-modules-right = redshift eth wifi battery volume
+modules-center =
+modules-right = redshift padding eth wifi padding battery padding volume padding date
 
 padding-left = 1
-padding-right = 2
-
-;tray-position = right
-
-;tray-detached = false
-
-;tray-maxsize = 4
-
-;tray-transparent = true
-
-;tray-background = #00000000
-
-;tray-offset-x = 0
-;tray-offset-y = 0
-
-;tray-padding = 0
-
-;tray-scale = 1.0
+padding-right = 1
 
 [bar/bar2]
 monitor = "VGA-1"
 
-font-0 = FiraMono:style=Bold:size=9;1
-font-1 = FontAwesome:fontformat=truetype:size=9;1
+font-0 = Hack:style=Bold:size=9;2
+font-1 = FontAwesome:fontformat=truetype:size=9;2
 
 width = 100%
-height = 23
+height = 20
 
 background = ${colors.background}
 foreground = ${colors.foreground}
+border-top-size = 7
+border-top-color = ${colors.background}
+;border-bottom-size = 7
+;border-bottom-color = ${colors.background}
 
 modules-left = i3
-modules-center = date
-modules-right = redshift eth wifi battery volume
+modules-center =
+modules-right = redshift padding eth wifi padding battery padding volume padding date
 
 padding-left = 1
-padding-right = 2
+padding-right = 1
 
 [module/i3]
 fixed-center = true
@@ -74,58 +83,55 @@ wrapping-scroll = true
 strip-wsnumbers = true
 pin-workspaces = true
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 8;
-ws-icon-4 = 9;
-ws-icon-default = 
+ws-icon-default = ○
 
-label-focused = %icon%
-label-focused-foreground = ${colors.foreground-alt} 
-label-focused-background = ${colors.background-alt}
-label-focused-padding = 2
+label-focused = ●
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.green}
+label-focused-padding = 1
 
 label-unfocused = %icon%
-label-unfocused-padding = 2
+label-unfocused-background = ${colors.background}
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-padding = 1
 
 label-visible = %icon%
-label-visible-padding = 2
+label-visible-background = ${colors.background}
+label-visible-foreground = ${colors.foreground}
+label-visible-padding = 1
 
 label-urgent = %icon%
-label-urgent-foreground = ${colors.foreground-urg}
-label-urgent-background = ${colors.background-urg}
-label-urgent-padding = 2
+label-urgent-background = ${colors.foreground}
+label-urgent-foreground = ${colors.red}
+label-urgent-padding = 1
 
 [module/date]
 type = internal/date
 interval = 1.0
-date = %d/%m %I:%M %p
+time=%a %b %d, %H:%M
+time-alt=%H:%M:%S
+label=%time%
+format=<label>
+format-padding=0
+label-background=${colors.background}
+label-foreground=${colors.foreground}
+label-padding= 1
 
 [module/volume]
 type = internal/volume
 
-format-volume = <bar-volume> <label-volume>
+format-volume = <label-volume>
+format-muted = <label-muted>
 
-format-muted-foreground = ${colors.foreground}
-label-muted = ""
+label-volume =  %percentage%
+label-volume-background = ${colors.background}
+label-volume-foreground = ${colors.foreground}
+label-volume-padding = 1
 
-bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.foreground}
-bar-volume-foreground-1 = ${colors.foreground}
-bar-volume-foreground-2 = ${colors.foreground}
-bar-volume-foreground-3 = ${colors.foreground}
-bar-volume-foreground-4 = ${colors.foreground}
-bar-volume-foreground-5 = ${colors.foreground}
-bar-volume-foreground-6 = ${colors.foreground}
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 0
-bar-volume-fill = ─
-bar-volume-fill-font = 0
-bar-volume-empty = ─
-bar-volume-empty-font = 0
-bar-volume-empty-foreground =
+label-muted =  0
+label-muted-background = ${colors.background}
+label-muted-foreground = ${colors.foreground}
+label-muted-padding = 1
 
 [module/battery]
 type = internal/battery
@@ -133,63 +139,59 @@ battery = BAT0
 adapter = AC
 full-at = 90
 
-format-charging = <animation-charging> <label-charging> 
+format-charging = <label-charging>
+format-discharging = <label-discharging>
+format-full= <label-full>
 
-format-discharging = <ramp-capacity> <label-discharging> 
+label-charging =  %percentage%
+label-charging-foreground = ${colors.foreground}
+label-charging-background = ${colors.background}
+label-charging-padding = 1
 
-format-full= "<ramp-capacity> "
-format-full-prefix-foreground = ${colors.foreground}
+label-discharging =  %percentage%
+label-discharging-foreground = ${colors.foreground}
+label-discharging-background = ${colors.background}
+label-discharging-padding = 1
 
-label-charging = "%percentage%% "
-label-discharging = "%percentage%% "
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-foreground = ${colors.foreground}
-animation-charging-framerate = 750
+label-full =  %percentage%
+label-full-foreground = ${colors.foreground}
+label-full-background = ${colors.background}
+label-full-padding = 1
 
 [module/wifi]
 type = internal/network
 interface = wlo1
 interval = 3.0
 
-;format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground}
-label-connected = " "
+format-connected = <label-connected>
+label-connected =  %essid%
 label-connected-foreground = ${colors.foreground}
-
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = #252525
+label-connected-background = ${colors.background}
+label-connected-padding = 1
 
 [module/eth]
 type = internal/network
 interface=enp37s0
 interval = 3.0
 
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground}
-label-connected = " "
+format-connected = <label-connected>
+label-connected = 
+label-connected-foreground = ${colors.foreground}
+label-connected-background = ${colors.background}
+label-connected-padding = 1
 
 [module/redshift]
 type = custom/script
 interval = 5
 exec = ~/.config/polybar/redshift.sh
 
-format-prefix-foreground = ${colors.foreground}
-format-padding = 2
+label = %output%
+format = <label>
+format-foreground = ${colors.foreground}
+format-padding = 1
 
+[module/padding]
+type=custom/text
+content=" "
+content-foreground=${colors.background}
+content-background=${colors.background}
