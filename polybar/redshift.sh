@@ -14,5 +14,5 @@ fi
 if [[ -z $temp ]]; then
     echo "%{F#858585}$icon"       # Greyed out (not running)
 else
-    echo "%{F#252525}$icon"       # Orange
+    echo "%{F#ffcb6b}$icon"       # Orange
 fi

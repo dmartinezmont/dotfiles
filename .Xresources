@@ -1,42 +1,69 @@
 #define bg 	        #252525
 #define fg 	        #979797
 
-#define black     #333333
+#define black       #333333
 #define red  	    #e53934
-#define green     #91b859
-#define yellow    #ffb62c
-#define blue      #6182b8
-#define magenta   #7c4dff
+#define green       #91b859
+#define yellow      #ffb62c
+#define blue        #6182b8
+#define magenta     #7c4dff
 #define cyan_d      #39abd5
-#define white     #bbbbbb
+#define white       #bbbbbb
 
-#define bblack       #555555
-#define bred         #ff5370
-#define bgreen	      #c3e88d
+#define bblack      #555555
+#define bred        #ff5370
+#define bgreen	    #c3e88d
 #define byellow	    #ffcb6b
-#define bblue	      #82aaff
-#define bmagenta	    #c792ea
-#define bcyan	      #89ddff
-#define bwhite		    fg
+#define bblue	    #82aaff
+#define bmagenta    #c792ea
+#define bcyan	    #89ddff
+#define bwhite		#eeeeee
+
+*cursorBlink        : 0
+*font               : xft:Menlo:size=9
+*boldFont           : xft:Menlo:size=9
+
+*lineSpace          : 0
+*letterSpace        : 1
+*scrollstyle        : rxvt
+*scrollBar          : false
+*internalBorder     : 20
+*cursorUnderline    : false
+*geometry           : 60x25
+*thickness          : 5
+*titleBar           : false
+*intensityStyles    : false
+*perl-lib           : /usr/lib/urxvt/perl/
+*perl-ext           : default,matcher
+*url-launcher       : /usr/bin/firefox
+*underlineURLs      : true
+
+Xft.dpi             : 96
+Xft.antialias       : true
+Xft.rgba            : rgb
+Xft.hinting         : true
+Xft.hintstyle       : hintslight
+Xft.autohint        : false
+Xft.lcdfilter       : lcddefault
 
 *foreground:        fg
 *background:        bg
 *color0:          	black
-*color8:          	black_d
+*color8:          	bblack
 *color1:          	red
-*color9:          	red_d
+*color9:          	bred
 *color2:          	green
-*color10:        	  green_d
+*color10:        	bgreen
 *color3:          	yellow
-*color11:        	  yellow_d
+*color11:        	byellow
 *color4:          	blue
-*color12:        	  blue_d
+*color12:        	bblue
 *color5:          	magenta
-*color13:        	  magenta_d
+*color13:        	bmagenta
 *color6:          	cyan
-*color14:        	  cyan_d
+*color14:        	bcyan
 *color7:          	white
-*color15:        	  white_d
+*color15:        	bwhite
 
 ! Rofi color theme
 rofi.font: 		        Fira Mono 10
@@ -46,9 +73,9 @@ rofi.bw:                1
 
 ! 			            bg          bdclr       separatorcolor
 rofi.color-window: 	bg,         bg,         bg
-!			              bg          fg          bcalt       hlbg        hlfg	
-rofi.color-normal: 	bg,         white_d,    bg,         yellow,     bg
+!			              bg          fg          bcalt       hlbg        hlfg
+rofi.color-normal: 	bg,         bwhite,     bg,         yellow,     bg
 rofi.color-active: 	yellow,     bg,         yellow,     black,      white
-rofi.color-urgent: 	red,        black,      red_d,      black,      white
+rofi.color-urgent: 	red,        black,      bred,       black,      white
 
 
