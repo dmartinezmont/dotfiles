@@ -1,3 +1,9 @@
+!     _  _ __ _     _  _ _ __
+!  \/|_)|_(_ / \| ||_)/ |_(_
+!  /\| \|___)\_/|_|| \\_|___)
+!
+
+
 #define bg 	        #252525
 #define fg 	        #979797
 
@@ -20,22 +26,24 @@
 #define bwhite		#eeeeee
 
 *cursorBlink        : 0
-*font               : xft:Menlo:size=9
-*boldFont           : xft:Menlo:size=9
+*font               : xft:Source Code Pro
+*boldFont           : xft:Source Code Pro
 
 *lineSpace          : 0
-*letterSpace        : 1
+*letterSpace        : -1
 *scrollstyle        : rxvt
 *scrollBar          : false
-*internalBorder     : 20
+*internalBorder     : 24
 *cursorUnderline    : false
-*geometry           : 60x25
+*geometry           : 70x35
 *thickness          : 5
 *titleBar           : false
 *intensityStyles    : false
+
 *perl-lib           : /usr/lib/urxvt/perl/
 *perl-ext           : default,matcher
 *url-launcher       : /usr/bin/firefox
+*matcher.button     : 1
 *underlineURLs      : true
 
 Xft.dpi             : 96

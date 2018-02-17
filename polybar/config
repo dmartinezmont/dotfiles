@@ -29,18 +29,33 @@ transparent     =   #00000000
 [bar/bar1]
 monitor = "LVDS-1"
 
-font-0 = Hack:size=8:1
-font-1 = FontAwesome:size=8:2
+font-0 = Consolas:size=8;1
+font-1 = FontAwesome:size=8;1
 
 width = 100%
 height = 20
+radius = 6.0
+;offset-x = 5%
+;offset-y = 0
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-border-top-size = 3
-border-top-color = ${colors.background}
+border-top-size = 4
+border-top-color = ${colors.transparent}
+border-left-size = 4
+border-left-color = ${colors.transparent}
+border-bottom-size = 0
+border-bottom-color = ${colors.transparent}
+border-right-size = 4
+border-right-color = ${colors.transparent}
+;border-top-size = 3
+;border-top-color = ${colors.background}
 ;border-bottom-size = 7
 ;border-bottom-color = ${colors.transparent}
+
+override-redirect = false
+fixed-center = true
+wm-restack = i3
 
 modules-left = date padding volume
 modules-center = i3
@@ -52,9 +67,6 @@ padding-right = 2
 spacing = 1
 
 [module/i3]
-fixed-center = true
-override-redirect = true
-
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
@@ -87,7 +99,7 @@ label-urgent-padding = 1
 [module/date]
 type = internal/date
 interval = 1.0
-time=%H:%M
+time=%H:%M - %a, %d/%m
 label=%time%
 format=<label>
 format-padding=0
