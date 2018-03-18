@@ -26,7 +26,7 @@ dimensions:
 # (change requires restart)
 padding:
   x: 15
-  y: 15
+  y: 20
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 4
@@ -56,19 +56,19 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Consolas # should be "Menlo" or something on macOS.
+    family: Ubuntu Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The bold font face
   bold:
-    family: Consolas # should be "Menlo" or something on macOS.
+    family: Ubuntu Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
-    style: Bold
+    style: Regular
 
   # The italic font face
   italic:
-    family: Consolas # should be "Menlo" or something on macOS.
+    family: Ubuntu Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Italic
 
@@ -104,7 +104,7 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '0x252525'
+    background: '0x151515'
     foreground: '0x979797'
 
   cursor:
@@ -113,7 +113,7 @@ colors:
 
   # Normal colors
   normal:
-    black:   '0x333333'
+    black:   '0x151515'
     red:     '0xe53934'
     green:   '0x91b859'
     yellow:  '0xffb62c'
@@ -253,7 +253,7 @@ key_bindings:
   - { key: W,        mods: Command, action: Quit                         }
   - { key: Insert,   mods: Shift,   action: PasteSelection               }
   - { key: Key0,     mods: Control, action: ResetFontSize                }
-  - { key: Equals,   mods: Control, action: IncreaseFontSize             }
+  - { key: Add,      mods: Control, action: IncreaseFontSize             }
   - { key: Subtract, mods: Control, action: DecreaseFontSize             }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }

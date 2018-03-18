@@ -3,11 +3,7 @@
 !  /\| \|___)\_/|_|| \\_|___)
 !
 
-
-#define bg 	        #252525
-#define fg 	        #979797
-
-#define black       #333333
+#define black       #151515
 #define red  	    #e53934
 #define green       #91b859
 #define yellow      #ffb62c
@@ -16,43 +12,17 @@
 #define cyan_d      #39abd5
 #define white       #bbbbbb
 
-#define bblack      #555555
+#define bblack      #353535
 #define bred        #ff5370
 #define bgreen	    #c3e88d
 #define byellow	    #ffcb6b
 #define bblue	    #82aaff
 #define bmagenta    #c792ea
 #define bcyan	    #89ddff
-#define bwhite		#eeeeee
+#define bwhite      #eeeeee
 
-*cursorBlink        : 0
-*font               : xft:Source Code Pro
-*boldFont           : xft:Source Code Pro
-
-*lineSpace          : 0
-*letterSpace        : -1
-*scrollstyle        : rxvt
-*scrollBar          : false
-*internalBorder     : 24
-*cursorUnderline    : false
-*geometry           : 70x35
-*thickness          : 5
-*titleBar           : false
-*intensityStyles    : false
-
-*perl-lib           : /usr/lib/urxvt/perl/
-*perl-ext           : default,matcher
-*url-launcher       : /usr/bin/firefox
-*matcher.button     : 1
-*underlineURLs      : true
-
-Xft.dpi             : 96
-Xft.antialias       : true
-Xft.rgba            : rgb
-Xft.hinting         : true
-Xft.hintstyle       : hintslight
-Xft.autohint        : false
-Xft.lcdfilter       : lcddefault
+#define bg 	        black
+#define fg 	        white
 
 *foreground:        fg
 *background:        bg
@@ -71,19 +41,48 @@ Xft.lcdfilter       : lcddefault
 *color6:          	cyan
 *color14:        	bcyan
 *color7:          	white
-*color15:        	bwhite
+*color15:           bwhite
+
+*cursorBlink        : 0
+URxvt.font          : xft:Ubuntu Mono:size=11
+URxvt.boldFont      : xft:Ubuntu Mono:size=11
+
+*lineSpace          : 0
+*letterSpace        : -1
+*scrollstyle        : rxvt
+*scrollBar          : false
+*internalBorder     : 24
+*cursorUnderline    : false
+*geometry           : 80x25
+*thickness          : 5
+*titleBar           : false
+*intensityStyles    : false
+
+*perl-lib           : /usr/lib/urxvt/perl/
+*perl-ext           : default,matcher
+*url-launcher       : /usr/bin/firefox
+*matcher.button     : 1
+*underlineURLs      : true
+
+Xft.dpi             : 96
+Xft.antialias       : true
+Xft.rgba            : rgb
+Xft.hinting         : true
+Xft.hintstyle       : hintslight
+Xft.autohint        : false
+Xft.lcdfilter       : lcddefault
+
 
 ! Rofi color theme
-rofi.font: 		        Fira Mono 10
+rofi.font: 		        Ubuntu Mono 9
 rofi.color-enabled: 	true
 rofi.hide-scrollbar:    true
 rofi.bw:                1
 
-! 			            bg          bdclr       separatorcolor
-rofi.color-window: 	bg,         bg,         bg
-!			              bg          fg          bcalt       hlbg        hlfg
-rofi.color-normal: 	bg,         bwhite,     bg,         yellow,     bg
-rofi.color-active: 	yellow,     bg,         yellow,     black,      white
+! 			        bg          bdclr       separatorcolor
+rofi.color-window: 	black,      byellow,    black
+!
+!			        bg          fg          bgalt       hlbg        hlfg
+rofi.color-normal: 	black,      white,      black,      yellow,     black
+rofi.color-active: 	yellow,     black,      yellow,     black,      white
 rofi.color-urgent: 	red,        black,      bred,       black,      white
-
-

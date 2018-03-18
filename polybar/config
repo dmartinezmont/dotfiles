@@ -11,47 +11,51 @@ blue          =   ${xrdb:*color4}
 magenta       =   ${xrdb:*color5}
 cyan          =   ${xrdb:*color6}
 white         =   ${xrdb:*color7}
-dblack        =   ${xrdb:*color8}
-dred          =   ${xrdb:*color9}
-dgreen        =   ${xrdb:*color10}
-dyellow       =   ${xrdb:*color11}
-dblue         =   ${xrdb:*color12}
-dmagenta      =   ${xrdb:*color13}
-dcyan         =   ${xrdb:*color14}
-dwhite        =   ${xrdb:*color15}
+bblack        =   ${xrdb:*color8}
+bred          =   ${xrdb:*color9}
+bgreen        =   ${xrdb:*color10}
+byellow       =   ${xrdb:*color11}
+bblue         =   ${xrdb:*color12}
+bmagenta      =   ${xrdb:*color13}
+bcyan         =   ${xrdb:*color14}
+bwhite        =   ${xrdb:*color15}
 
-background      =   ${xrdb:*background}
-foreground      =   ${xrdb:*foreground}
-background-urg  =   #e53934
-foreground-urg  =   #e53934
+background      =   ${xrdb:*color0}
+foreground      =   ${xrdb:*color7}
+background-urg  =   ${xrdb:*color1}
+foreground-urg  =   ${xrdb:*color0}
 transparent     =   #00000000
 
 [bar/bar1]
 monitor = "LVDS-1"
 
-font-0 = Consolas:size=8;1
+font-0 = Ubuntu Mono:size=8;1
 font-1 = FontAwesome:size=8;1
 
 width = 100%
 height = 20
-radius = 6.0
-;offset-x = 5%
-;offset-y = 0
+radius = 0.0
+offset-x = 0
+offset-y = 0
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-border-top-size = 4
-border-top-color = ${colors.transparent}
-border-left-size = 4
-border-left-color = ${colors.transparent}
-border-bottom-size = 0
-border-bottom-color = ${colors.transparent}
-border-right-size = 4
-border-right-color = ${colors.transparent}
-;border-top-size = 3
-;border-top-color = ${colors.background}
-;border-bottom-size = 7
-;border-bottom-color = ${colors.transparent}
+
+underline-size = 1
+underline-color = ${colors.red}
+
+; border-top-size = 4
+; border-top-color = ${colors.transparent}
+; border-left-size = 4
+; border-left-color = ${colors.transparent}
+; border-bottom-size = 0
+; border-bottom-color = ${colors.transparent}
+; border-right-size = 4
+; border-right-color = ${colors.transparent}
+; border-top-size = 3
+; border-top-color = ${colors.background}
+; border-bottom-size = 7
+; border-bottom-color = ${colors.transparent}
 
 override-redirect = false
 fixed-center = true
@@ -59,11 +63,9 @@ wm-restack = i3
 
 modules-left = date padding volume
 modules-center = i3
-modules-right = battery padding eth wifi padding redshift padding powermenu
+modules-right = battery padding eth wifi padding redshift
 
-padding-left = 2
-padding-right = 2
-
+padding = 1
 spacing = 1
 
 [module/i3]
@@ -78,7 +80,8 @@ ws-icon-default = ~
 
 label-focused = *
 label-focused-background = ${colors.background}
-label-focused-foreground = ${colors.foreground}
+label-focused-foreground = ${colors.yellow}
+label-focused-underline = ${colors.yellow}
 label-focused-padding = 1
 
 label-unfocused = %icon%
@@ -92,35 +95,42 @@ label-visible-foreground = ${colors.foreground}
 label-visible-padding = 1
 
 label-urgent = #
-label-urgent-background = ${colors.background}
-label-urgent-foreground = ${colors.foreground}
+label-urgent-background = ${colors.black}
+label-urgent-foreground = ${colors.red}
 label-urgent-padding = 1
 
 [module/date]
 type = internal/date
 interval = 1.0
-time=%H:%M - %a, %d/%m
-label=%time%
-format=<label>
-format-padding=0
-label-background=${colors.background}
-label-foreground=${colors.foreground}
-label-padding= 1
+time = %H:%M
+date = %d/%m
+label = %time% - %date%
+format = <label>
+format-padding = 0
+format-foreground = ${colors.green}
+label-background = ${colors.background}
+label-foreground = ${colors.foreground}
+label-underline = ${colors.green}
+label-padding = 1
 
 [module/volume]
 type = internal/volume
 
 format-volume = <label-volume>
+format-volume-prefix = ""
+format-volume-prefix-foreground = ${colors.green}
 format-muted = <label-muted>
 
-label-volume =  %percentage%
+label-volume =%percentage%
 label-volume-background = ${colors.background}
 label-volume-foreground = ${colors.foreground}
+label-volume-underline = ${colors.green}
 label-volume-padding = 1
 
-label-muted =  0
+label-muted =
 label-muted-background = ${colors.background}
-label-muted-foreground = ${colors.foreground}
+label-muted-foreground = ${colors.red}
+label-muted-underline = ${colors.red}
 label-muted-padding = 1
 
 [module/battery]
@@ -129,24 +139,40 @@ battery = BAT0
 adapter = AC
 full-at = 90
 
-format-charging = <label-charging>
-format-discharging = <label-discharging>
+format-charging = ${colors.green} <animation-charging> <label-charging>
+format-discharging = ${colors.yellow} <ramp-capacity> <label-discharging>
 format-full= <label-full>
 
-label-charging =  %percentage%
+label-charging = %percentage%
 label-charging-foreground = ${colors.foreground}
 label-charging-background = ${colors.background}
+label-charging-underline = ${colors.green}
 label-charging-padding = 1
 
-label-discharging =  %percentage%
+label-discharging = %percentage%
 label-discharging-foreground = ${colors.foreground}
 label-discharging-background = ${colors.background}
+label-discharging-underline = ${colors.yellow}
 label-discharging-padding = 1
 
-label-full =  %percentage%
+label-full = 
 label-full-foreground = ${colors.foreground}
 label-full-background = ${colors.background}
+label-full-underline = ${colors.green}
 label-full-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
 
 [module/wifi]
 type = internal/network
@@ -154,9 +180,12 @@ interface = wlo1
 interval = 3.0
 
 format-connected = <label-connected>
-label-connected =  %essid%
+format-connected-prefix = 
+format-connected-prefix-foreground = ${colors.green}
+label-connected =  %essid%
 label-connected-foreground = ${colors.foreground}
 label-connected-background = ${colors.background}
+label-connected-underline = ${colors.green}
 label-connected-padding = 1
 
 [module/eth]
@@ -166,8 +195,9 @@ interval = 3.0
 
 format-connected = <label-connected>
 label-connected = 
-label-connected-foreground = ${colors.foreground}
+label-connected-foreground = ${colors.green}
 label-connected-background = ${colors.background}
+label-connected-underline = ${colors.green}
 label-connected-padding = 1
 
 [module/redshift]
@@ -177,53 +207,54 @@ exec = ~/.config/polybar/redshift.sh
 
 label = %output%
 format = <label>
-format-foreground = ${colors.foreground}
+format-foreground = ${colors.black}
+format-underline = ${colors.yellow}
 format-padding = 1
-
-[module/powermenu]
-type = custom/menu
-
-label-open                 = 
-label-open-foreground      = ${colors.foreground}
-label-open-background      = ${colors.background}
-label-open-padding         = 1
-label-close                = 
-label-close-padding        = 1
-label-close-foreground     = $[colors.red]
-label-separator            = |
-label-separator-foreground = ${colors.foreground}
-
-menu-0-0      = suspend
-menu-0-0-exec = menu-open-1
-menu-0-1      = reboot
-menu-0-1-exec = menu-open-2
-menu-0-2      = poweroff
-menu-0-2-exec = menu-open-3
-menu-0-3      = logout
-menu-0-3-exec = menu-open-4
-
-menu-1-0      = 
-menu-1-0-exec = systemctl suspend
-menu-1-1      = 
-menu-1-1-exec = menu-open-0
-
-menu-2-0      = 
-menu-2-0-exec = systemctl reboot
-menu-2-1      = 
-menu-2-1-exec = menu-open-0
-
-menu-3-0      = 
-menu-3-0-exec = systemctl poweroff
-menu-3-1      = 
-menu-3-1-exec = menu-open-0
-
-menu-4-0      = 
-menu-4-0-exec = i3-msg exit
-menu-4-1      = 
-menu-4-1-exec = menu-open-0
 
 [module/padding]
 type=custom/text
 content=" "
 content-foreground=${colors.background}
 content-background=${colors.background}
+
+; [module/powermenu]
+; type = custom/menu
+
+; label-open                 = 
+; label-open-foreground      = ${colors.foreground}
+; label-open-background      = ${colors.background}
+; label-open-padding         = 1
+; label-close                = 
+; label-close-padding        = 1
+; label-close-foreground     = $[colors.red]
+; label-separator            = |
+; label-separator-foreground = ${colors.foreground}
+
+; menu-0-0      = suspend
+; menu-0-0-exec = menu-open-1
+; menu-0-1      = reboot
+; menu-0-1-exec = menu-open-2
+; menu-0-2      = poweroff
+; menu-0-2-exec = menu-open-3
+; menu-0-3      = logout
+; menu-0-3-exec = menu-open-4
+
+; menu-1-0      = 
+; menu-1-0-exec = systemctl suspend
+; menu-1-1      = 
+; menu-1-1-exec = menu-open-0
+
+; menu-2-0      = 
+; menu-2-0-exec = systemctl reboot
+; menu-2-1      = 
+; menu-2-1-exec = menu-open-0
+
+; menu-3-0      = 
+; menu-3-0-exec = systemctl poweroff
+; menu-3-1      = 
+; menu-3-1-exec = menu-open-0
+
+; menu-4-0      = 
+; menu-4-0-exec = i3-msg exit
+; menu-4-1      = 
+; menu-4-1-exec = menu-open-0
