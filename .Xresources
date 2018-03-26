@@ -44,8 +44,8 @@
 *color15:           bwhite
 
 *cursorBlink        : 0
-URxvt.font          : xft:Ubuntu Mono:size=11
-URxvt.boldFont      : xft:Ubuntu Mono:size=11
+URxvt.font          : xft:UbuntuMono Nerd Font Mono:size=9
+URxvt.boldFont      : xft:UbuntuMono Nerd Font Mono:size=9
 
 *lineSpace          : 0
 *letterSpace        : -1
