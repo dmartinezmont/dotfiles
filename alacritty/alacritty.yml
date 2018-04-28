@@ -25,8 +25,8 @@ dimensions:
 # Units are physical pixels; this is not DPI aware.
 # (change requires restart)
 padding:
-  x: 15
-  y: 20
+  x: 10
+  y: 10
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 4
@@ -56,19 +56,19 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Ubuntu Mono # should be "Menlo" or something on macOS.
+    family: UbuntuMono Nerd Font Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The bold font face
   bold:
-    family: Ubuntu Mono # should be "Menlo" or something on macOS.
+    family: UbuntuMono Nerd Font Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The italic font face
   italic:
-    family: Ubuntu Mono # should be "Menlo" or something on macOS.
+    family: UbuntuMono Nerd Font Mono # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Italic
 

@@ -13,7 +13,7 @@ cyan          =   ${xrdb:*color6}
 white         =   ${xrdb:*color7}
 bblack        =   ${xrdb:*color8}
 bred          =   ${xrdb:*color9}
-bgreen        =   ${xrdb:*color10}
+bgreen        =   ${xrdb:*color10} 
 byellow       =   ${xrdb:*color11}
 bblue         =   ${xrdb:*color12}
 bmagenta      =   ${xrdb:*color13}
@@ -29,8 +29,8 @@ transparent     =   #00000000
 [bar/bar1]
 monitor = "LVDS-1"
 
-font-0 = Ubuntu Mono:size=8;1
-font-1 = FontAwesome:size=8;1
+font-0 = UbuntuMono Nerd Font Mono:size=9;1
+; font-1 = FontAwesome:size=8;1
 
 width = 100%
 height = 20
@@ -61,7 +61,7 @@ override-redirect = false
 fixed-center = true
 wm-restack = i3
 
-modules-left = date padding volume
+modules-left = date padding volume 
 modules-center = i3
 modules-right = battery padding eth wifi padding redshift
 
@@ -217,44 +217,3 @@ content=" "
 content-foreground=${colors.background}
 content-background=${colors.background}
 
-; [module/powermenu]
-; type = custom/menu
-
-; label-open                 = 
-; label-open-foreground      = ${colors.foreground}
-; label-open-background      = ${colors.background}
-; label-open-padding         = 1
-; label-close                = 
-; label-close-padding        = 1
-; label-close-foreground     = $[colors.red]
-; label-separator            = |
-; label-separator-foreground = ${colors.foreground}
-
-; menu-0-0      = suspend
-; menu-0-0-exec = menu-open-1
-; menu-0-1      = reboot
-; menu-0-1-exec = menu-open-2
-; menu-0-2      = poweroff
-; menu-0-2-exec = menu-open-3
-; menu-0-3      = logout
-; menu-0-3-exec = menu-open-4
-
-; menu-1-0      = 
-; menu-1-0-exec = systemctl suspend
-; menu-1-1      = 
-; menu-1-1-exec = menu-open-0
-
-; menu-2-0      = 
-; menu-2-0-exec = systemctl reboot
-; menu-2-1      = 
-; menu-2-1-exec = menu-open-0
-
-; menu-3-0      = 
-; menu-3-0-exec = systemctl poweroff
-; menu-3-1      = 
-; menu-3-1-exec = menu-open-0
-
-; menu-4-0      = 
-; menu-4-0-exec = i3-msg exit
-; menu-4-1      = 
-; menu-4-1-exec = menu-open-0

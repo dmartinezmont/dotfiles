@@ -149,21 +149,24 @@ client.urgent               $urgent     $urgent     $foreground $urgent     $urg
 
 # Personal bynds
 bindsym $mod+n exec ~/.config/i3/redshift-toggle.sh
-bindsym $mod+p exec ~/.config/i3/polybar-toggle.sh
+bindsym $mod+b exec ~/.config/i3/polybar-toggle.sh
+bindsym $mod+p exec ~/.config/i3/pomodoro
+bindsym $mod+Shift+p exec pkill -f pomodoro
 bindsym $mod+x exec i3lock
 
 # Programs to execute when i3 is loaded
 exec --no-startup-id compton --config ~/.config/compton/config
+exec --no-startup-id flashfocus -o 0.9 -t 200
 exec --no-startup-id zathura Documents/libros/cracking-the-coding-interview-6th.pdf &
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc &
-exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/background &
+exec_always --no-startup-id feh --randomize --bg-fill ~/Pictures/wallpaper &
 
 # Window configurations
 # smart_gaps on
 # smart_borders on
-new_window pixel 1
-new_float pixel 1
+new_window pixel 0
+new_float pixel 2
 
 # gaps
 set $inner 5
@@ -174,7 +177,7 @@ gaps outer $outer
 
 # gap toggle
 bindsym $mod+g exec compton; gaps inner all set $inner; gaps outer all set $outer
-bindsym $mod+Shift+g exec pkill compton; gaps inner all set 0; gaps outer all set 0
+bindsym $mod+Shift+g exec gaps inner all set 0; gaps outer all set 0
 
 # Loop through workspaces
 bindsym $mod_alt+l workspace next

@@ -47,7 +47,7 @@ show_age_threshold = -1
 
 # Split notifications into multiple lines if they don't fit into
 # geometry.
-word_wrap = off
+word_wrap = on
 
 # Ignore newlines '\n' in notifications.
 ignore_newline = no
@@ -70,7 +70,7 @@ hide_duplicates_count = yes
 # The width can be negative.  In this case the actual width is the
 # screen width minus the width defined in within the geometry option.
 #geometry = "250x50-40+40"
-geometry = "300x50-15+38"
+geometry = "350x70-15+38"
 
 # Shrink window if it's smaller than the width.  Will be ignored if
 # width is 0.
@@ -100,7 +100,7 @@ monitor = 0
 #
 # If this option is set to mouse or keyboard, the monitor option
 # will be ignored.
-follow = none
+follow = mouse
 
 # Should a notification popped up from history be sticky or timeout
 # as if it would normally do.
@@ -145,7 +145,7 @@ startup_notification = false
 dmenu = /usr/bin/dmenu -p dunst:
 
 # Browser for opening urls in context menu.
-browser = /usr/bin/chromium-browser -new-tab
+browser = /usr/bin/firefox -new-tab
 
 # Align icons left/right/off
 icon_position = off
@@ -176,27 +176,25 @@ history = ctrl+h
 context = ctrl+shift+period
 
 [frame]
-width = 2
+width = 1
 color = "#303030"
 
 [urgency_low]
-# IMPORTANT: colors have to be defined in quotation marks.
-# Otherwise the "#" and following would be interpreted as a comment.
-frame_color = "#82AAFF"
-foreground = "#82AAFF"
-background = "#252525"
-timeout = 3
+frame_color = "#6182b8" 
+foreground  = "#6182b8"
+background  = "#151515"
+timeout = 4
 
 [urgency_normal]
-frame_color = "#C3E88D"
-foreground = "#C3E88D"
-background = "#252525"
-timeout = 5
+frame_color = "#ffb62c"
+foreground  = "#ffb62c"
+background  = "#151515"
+timeout = 6
 
 [urgency_critical]
-frame_color = "#FF5370"
-foreground = "#FF5370"
-background = "#252525"
+frame_color = "#e53934"
+foreground  = "#e53934"
+background  = "#151515"
 timeout = 8
 
 

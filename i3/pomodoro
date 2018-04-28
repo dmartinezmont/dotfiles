@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+
+import subprocess
+import sys
+import time
+
+DEV_NULL = open('/dev/null', 'w')
+
+def tick(duration):
+    time.sleep(duration)
+
+def notify(title, message, urgency):
+    cmd = ['notify-send', '-u', urgency, '-a', title, message]
+    p = subprocess.Popen(cmd, stdout = DEV_NULL, stderr = subprocess.PIPE)
+    p.wait()
+    p.kill()
+
+def main(args):
+    duration, rest = 25, 5
+    if len(args) != 0:
+        duration, rest = args
+    notify('Pomodoro', f'Started timer with <b>{duration}</b> minutes.', 'normal')
+    tick(int(duration) * 60)
+    notify('Pomodoro', f'It\'s time to rest! Take <b>{rest}</b> minutes.', 'critical')
+    tick(int(rest) * 60)
+    notify('Pomodoro', f'Back to WORK!', 'critical')
+    
+if __name__ == '__main__':
+    sys.exit(main(sys.argv[1:]))
