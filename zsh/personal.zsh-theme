@@ -9,7 +9,7 @@ function check_git_prompt_info() {
 }
 
 PROMPT='%(?,%{$fg[yellow]%},%{$fg[red]%})%# %{$reset_color%}'
-RPROMPT='%{$fg_bold[black]%}%2~ $(check_git_prompt_info)%{$reset_color%}'
+RPROMPT='%{$fg[cyan]%}%2~ $(check_git_prompt_info)%{$reset_color%}'
 
 # Format for git_prompt_info()
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}@ %{$reset_color%}"
